@@ -11,16 +11,12 @@ import { useApi } from "../hooks/useApi";
 
 export const PokemonList = () => {
 
-    const [error, setError] = useState(false)
-
     const { setTotalPage, setPokemons, setPage, page, loadPokemon, totalPage, pokemons, loading, setLoading } = useApi();
 
     const handleSearch = async (poke: string) => {
         setLoading(false)
         const data = await searchPokemon(poke);
-
         if (!data) {
-            setError(true)
             setLoading(true)
         }
         else {
