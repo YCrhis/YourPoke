@@ -12,7 +12,7 @@ const initial_state = {
         {
             name: 'holiday',
             id: -1,
-            img: 'http'
+            img: 'https://static.wixstatic.com/media/1756ec_079eb8009408447ba10a65100f84f12d~mv2.gif'
         },
     ],
 }

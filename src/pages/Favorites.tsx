@@ -23,7 +23,7 @@ export const Favorites = () => {
             <SimpleGrid minChildWidth='300px' spacing='80px'>
                 {pokestate.pokemons.map((pokemon: any) => (
 
-                    <Box boxShadow='xl' width="300px" margin="auto">
+                    <Box boxShadow='xl' width="300px" margin="auto" key={pokemon.id}>
                         <Flex alignItems="center" justifyContent='space-between'>
                             <Flex alignItems="center">
                                 <Image
