@@ -10,7 +10,7 @@ export const PokeReducer = (state: PokemonList, action: PokemonActions): Pokemon
         case 'addFavorites':
             return {
                 ...state,
-                pokemons: [...state.pokemons, action.payload]
+                pokemons: [...state?.pokemons, action.payload]
             }
         case 'delete':
             return {
