@@ -19,15 +19,16 @@ const initial_state: PokemonList = {
 
 const PokeProvider = ({ children }: props) => {
 
+    const localData = localStorage.getItem('pokemons');
+
     const [pokestate, dispatch] = useReducer(PokeReducer, initial_state, () => {
-        const localData = localStorage.getItem('pokemons');
         return localData ? JSON.parse(localData) : localStorage.setItem('pokemons', JSON.stringify(initial_state));
     });
 
-    console.log(pokestate, ' como es ki que no')
+    console.log(localData, ' como es ki que no')
 
     useEffect(() => {
-        if (pokestate === undefined) {
+        if (localData === undefined) {
             localStorage.setItem('pokemons', JSON.stringify(initial_state));
         } else {
             localStorage.setItem('pokemons', JSON.stringify(pokestate));
