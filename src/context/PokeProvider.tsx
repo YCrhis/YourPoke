@@ -28,7 +28,7 @@ const PokeProvider = ({ children }: props) => {
     console.log(localData, ' como es ki que no')
 
     useEffect(() => {
-        if (localData === undefined) {
+        if (localData === null) {
             localStorage.setItem('pokemons', JSON.stringify(initial_state));
         } else {
             localStorage.setItem('pokemons', JSON.stringify(pokestate));
