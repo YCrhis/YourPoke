@@ -1,6 +1,5 @@
-import { Box, Container, Text } from "@chakra-ui/react";
-import { motion } from 'framer-motion'
-import { bannerAnimation, transition } from "../animations";
+import { Box, Container } from "@chakra-ui/react";
+import { Footer } from "../components/Footer";
 
 interface props {
     children: JSX.Element | JSX.Element[]
@@ -11,20 +10,7 @@ export const Content = ({ children }: props) => {
         <Box pt={['200px', '200px', '100px']}>
             <Container maxW='container.xl'>
                 {children}
-                <motion.div
-                    initial="out"
-                    animate="in"
-                    exit="out"
-                    transition={transition}
-                    variants={bannerAnimation}
-                    key="card"
-                >
-                    <Box p="10" textAlign="center">
-                        <Text color="gray">
-                            Web page made by Yeridi Crhis &copy; 2022
-                        </Text>
-                    </Box>
-                </motion.div>
+                <Footer />
             </Container>
         </Box>
     )
