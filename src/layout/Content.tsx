@@ -7,7 +7,7 @@ interface props {
 
 export const Content = ({ children }: props) => {
     return (
-        <Box pt={['200px', '200px', '100px']}>
+        <Box pt={['150px', '150px', '100px']}>
             <Container maxW='container.xl'>
                 {children}
                 <Footer />

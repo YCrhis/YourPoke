@@ -58,22 +58,20 @@ export const PokemonList = () => {
             <Button mb="30px" colorScheme='teal' onClick={() => loadPokemon()}>See All The Pokemons</Button>
 
             <Box w="80%" margin="auto">
-                <AnimatePresence exitBeforeEnter>
-                    {loading ?
-                        <SimpleGrid minChildWidth='200px' spacing='80px'>
-                            {pokemons.map((pokemon) => (
-                                <CardPoke
-                                    key={pokemon.id}
-                                    image={pokemon.sprites.front_default}
-                                    name={pokemon.name}
-                                    id={pokemon.id}
-                                />
-                            ))}
-                        </SimpleGrid>
-                        :
-                        <Loading />
-                    }
-                </AnimatePresence>
+                {loading ?
+                    <SimpleGrid minChildWidth='200px' spacing='80px'>
+                        {pokemons.map((pokemon) => (
+                            <CardPoke
+                                key={pokemon.id}
+                                image={pokemon.sprites.front_default}
+                                name={pokemon.name}
+                                id={pokemon.id}
+                            />
+                        ))}
+                    </SimpleGrid>
+                    :
+                    <Loading />
+                }
             </Box>
         </div>
     )

@@ -1,8 +1,16 @@
 import { Image, Text } from "@chakra-ui/react"
+import { motion } from "framer-motion"
+import { bannerAnimation, transition } from "../animations"
 
 export const NoPoke = () => {
     return (
-        <div>
+        <motion.div
+            initial="out"
+            animate="in"
+            exit="out"
+            transition={transition}
+            variants={bannerAnimation}
+        >
             <Text fontSize="2xl" textAlign="center" color="purple.500">You don't have any favorite pokemon :(</Text>
             <Image
                 borderRadius='50%'
@@ -11,6 +19,6 @@ export const NoPoke = () => {
                 mt="30px"
                 src="https://c.tenor.com/XuxCCtkGD10AAAAC/cat-rainbow.gif"
             />
-        </div>
+        </motion.div>
     )
 }

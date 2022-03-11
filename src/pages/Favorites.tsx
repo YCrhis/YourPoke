@@ -9,6 +9,13 @@ export const Favorites = () => {
 
     const { pokestate, deletePokemon } = usePoke();
 
+    const handleDeletePokemon = (id: number) => {
+        const poke = window.confirm('Do you want to delete this pokemon? ╭( ◕﹏◕ )╮');
+        if (poke === true) {
+            deletePokemon(id)
+        }
+    }
+
     return (
         <motion.div
             initial="out"
@@ -22,7 +29,7 @@ export const Favorites = () => {
                 <Text fontSize='6xl' color='teal.300' fontWeight='bold' mb="70px">Your Favorites Pokemons</Text>
             </Box>
             <SimpleGrid minChildWidth='300px' spacing='80px'>
-                {pokestate?.length > 0 ?
+                {pokestate?.pokemons?.length > 0 ?
                     pokestate?.pokemons?.map((pokemon: any) => (
                         <Box boxShadow='xl' width="300px" margin="auto" key={pokemon.id}>
                             <Flex alignItems="center" justifyContent='space-between'>
@@ -36,8 +43,10 @@ export const Favorites = () => {
                                         <Text>{pokemon.name}</Text>
                                     </Box>
                                 </Flex>
-                                <Box bg="pink.300" w="10%" h="160px" display='flex' alignItems='center' justifyContent='center'>
-                                    <DeleteIcon w='40px' cursor='pointer' onClick={() => deletePokemon(pokemon.id)} />
+                                <Box bg="pink.300" w="10%" h="160px" display='flex' alignItems='center' justifyContent='center'
+                                    onClick={() => handleDeletePokemon(pokemon.id)}
+                                >
+                                    <DeleteIcon w='40px' cursor='pointer' />
                                 </Box>
                             </Flex>
                         </Box>
