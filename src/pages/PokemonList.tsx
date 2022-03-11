@@ -60,7 +60,7 @@ export const PokemonList = () => {
             <Box w="80%" margin="auto">
                 {loading ?
                     <SimpleGrid minChildWidth='200px' spacing='80px'>
-                        {pokemons.map((pokemon) => (
+                        {pokemons?.map((pokemon) => (
                             <CardPoke
                                 key={pokemon.id}
                                 image={pokemon.sprites.front_default}
