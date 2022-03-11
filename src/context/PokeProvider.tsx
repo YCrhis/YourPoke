@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from "react"
-import { Pokemon } from "../interfaces/Pokemon";
+import { Pokemon, PokemonList } from "../interfaces/Pokemon";
 import { PokeContext } from "./PokeContext";
 import { PokeReducer } from "./PokeReducer";
 
@@ -7,7 +7,7 @@ interface props {
     children: JSX.Element | JSX.Element[]
 }
 
-const initial_state = {
+const initial_state: PokemonList = {
     pokemons: [
         {
             name: 'holiday',
@@ -18,6 +18,7 @@ const initial_state = {
 }
 
 const PokeProvider = ({ children }: props) => {
+
     const [pokestate, dispatch] = useReducer(PokeReducer, initial_state, () => {
         const localData = localStorage.getItem('pokemons');
         return localData ? JSON.parse(localData) : localStorage.setItem('pokemons', JSON.stringify(initial_state));
@@ -25,13 +26,11 @@ const PokeProvider = ({ children }: props) => {
 
     console.log(pokestate, ' como es ki que no')
 
-    /*  */
-
     useEffect(() => {
         if (pokestate === undefined) {
-            localStorage.setItem('pokemons', JSON.stringify(initial_state))
+            localStorage.setItem('pokemons', JSON.stringify(initial_state));
         } else {
-            localStorage.setItem('pokemons', JSON.stringify(pokestate))
+            localStorage.setItem('pokemons', JSON.stringify(pokestate));
         }
     }, [pokestate]);
 
