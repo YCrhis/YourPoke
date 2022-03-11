@@ -3,15 +3,13 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import { ChakraProvider } from '@chakra-ui/react'
-import PokeProvider from './context/PokeProvider'
 
 ReactDOM.render(
   <React.StrictMode>
-    <PokeProvider>
-      <ChakraProvider>
-        <App />
-      </ChakraProvider>
-    </PokeProvider>
+
+    <ChakraProvider>
+      <App />
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )
