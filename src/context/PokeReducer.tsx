@@ -15,7 +15,7 @@ export const PokeReducer = (state: PokemonList, action: PokemonActions): Pokemon
         case 'delete':
             return {
                 ...state,
-                pokemons: state.pokemons.filter(pokemon => pokemon.id !== action.payload.id)
+                pokemons: state?.pokemons?.filter(pokemon => pokemon.id !== action.payload.id)
             }
 
         default:
