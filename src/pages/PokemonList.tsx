@@ -1,6 +1,5 @@
 import { Box, Button, SimpleGrid } from "@chakra-ui/react";
-import { AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { searchPokemon } from "../apis"
 import { CardPoke } from "../components/CardPoke";
 import { HeroPoke } from "../components/HeroPoke";

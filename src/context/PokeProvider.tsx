@@ -42,7 +42,7 @@ const PokeProvider = ({ children }: props) => {
     }
 
     return (
-        <PokeContext.Provider value={{ pokestate, addPokemon, deletePokemon }}>
+        <PokeContext.Provider value={{ addPokemon, deletePokemon, pokestate }}>
             {children}
         </PokeContext.Provider>
     )
