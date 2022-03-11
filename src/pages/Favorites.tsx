@@ -21,7 +21,7 @@ export const Favorites = () => {
                 <Text fontSize='6xl' color='teal.300' fontWeight='bold' mb="70px">Your Favorites Pokemons</Text>
             </Box>
             <SimpleGrid minChildWidth='300px' spacing='80px'>
-                {pokestate.pokemons.map((pokemon: any) => (
+                {pokestate?.pokemons?.map((pokemon: any) => (
 
                     <Box boxShadow='xl' width="300px" margin="auto" key={pokemon.id}>
                         <Flex alignItems="center" justifyContent='space-between'>

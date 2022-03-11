@@ -30,7 +30,7 @@ export const Header = () => {
                             <Button colorScheme='teal' size='lg' variant='link' mr='20px'>Pokemons</Button>
                         </Link>
                         <Link to="/pokemons/favorites">
-                            <Button colorScheme='teal' size='lg' variant='link' mr='10px'>Yours {pokestate.pokemons.length}&#128147;</Button>
+                            <Button colorScheme='teal' size='lg' variant='link' mr='10px'>Yours {pokestate?.pokemons?.length}&#128147;</Button>
                         </Link>
                         <SwitchPage />
                     </Flex>
