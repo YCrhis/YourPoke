@@ -6,9 +6,9 @@ export default defineConfig({
   plugins: [react()],
   server:{  
     proxy:
-      {
-        "rewrites": [{ "source": "/(.*)", "destination": "/" }]
-      }
+    {
+      "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+    }
   }
 })
 
