@@ -7,7 +7,7 @@ export default defineConfig({
   server:{  
     proxy:
     {
-      rewrite: [{ "source": "/(.*)", "destination": "/" }]
+      "rewrites": [{ "source": "/(.*)", "destination": "/" }]
     }
   }
 })
